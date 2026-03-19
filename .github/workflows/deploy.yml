@@ -16,13 +16,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Build Astro project
-        run: npm run build
+        run: pnpm run build
 
       - name: Deploy to target repository
         uses: peaceiris/actions-gh-pages@v4
